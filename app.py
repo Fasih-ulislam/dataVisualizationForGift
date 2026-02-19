@@ -15,10 +15,9 @@ st.markdown("Interactive insights into films, ratings, and rental trends")
 # ---------------------------
 # Database Connection
 # ---------------------------
-engine = sa.create_engine(
-    "postgresql+psycopg://postgres:0828Fasih2006@aws-0-REGION.pooler.supabase.com:6543/postgres"
+# Connect to Supabase via connection pooling
+engine = sa.engine("postgresql://postgres.vmuxhpshnbrexcjuogyg:0828Fasih2006@aws-1-ap-southeast-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
 )
-
 
 
 @st.cache_data
