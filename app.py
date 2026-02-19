@@ -16,7 +16,7 @@ st.markdown("Interactive insights into films, ratings, and rental trends")
 # Database Connection
 # ---------------------------
 engine = sa.create_engine(
-    "postgresql+psycopg://postgres:YOUR_PASSWORD@aws-0-us-east-1.pooler.supabase.com:6543/postgres"
+    "postgresql+psycopg://postgres:0828Fasih2006@aws-0-us-east-1.pooler.supabase.com:6543/postgres"
 )
 
 
