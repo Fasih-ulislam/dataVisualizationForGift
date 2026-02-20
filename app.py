@@ -4,12 +4,11 @@ import plotly.express as px
 from sqlalchemy import create_engine
 
 # Construct the SQLAlchemy connection string
-DATABASE_URL = f"postgresql://postgres:0828Fasih2006@db.vmuxhpshnbrexcjuogyg.supabase.co:5432/postgres"
+DATABASE_URL = f"postgresql://postgres.vmuxhpshnbrexcjuogyg:0828Fasih2006@aws-1-ap-southeast-2.pooler.supabase.com:6543/postgres"
 
 # Create the SQLAlchemy engine
 engine = create_engine(
-    DATABASE_URL,
-    connect_args={"sslmode": "require"}
+    DATABASE_URL
 )
 
 try:
