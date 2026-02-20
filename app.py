@@ -1,8 +1,19 @@
 import streamlit as st
-import sqlalchemy as sa
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
+from sqlalchemy import create_engine
+
+# Construct the SQLAlchemy connection string
+DATABASE_URL = f"postgresql://postgres:0828Fasih2006@db.vmuxhpshnbrexcjuogyg.supabase.co:5432/postgres"
+
+# Create the SQLAlchemy engine
+engine = create_engine(DATABASE_URL)
+
+try:
+    with engine.connect() as connection:
+        print("Connection successful!")
+except Exception as e:
+    print(f"Failed to connect: {e}")
 
 # ---------------------------
 # Page Config
@@ -11,13 +22,6 @@ st.set_page_config(page_title="Sakila Analytics Dashboard", layout="wide")
 
 st.title("🎬 Sakila Film Analytics Dashboard")
 st.markdown("Interactive insights into films, ratings, and rental trends")
-
-# ---------------------------
-# Database Connection
-# ---------------------------
-# Connect to Supabase via connection pooling
-engine = sa.create_engine("postgresql://postgres.vmuxhpshnbrexcjuogyg:0828Fasih2006@aws-1-ap-southeast-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
-)
 
 
 @st.cache_data
