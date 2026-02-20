@@ -8,8 +8,13 @@ DATABASE_URL = f"postgresql://postgres.vmuxhpshnbrexcjuogyg:0828Fasih2006@aws-1-
 
 # Create the SQLAlchemy engine
 engine = create_engine(
-    DATABASE_URL
+    DATABASE_URL,
+    pool_size=5,
+    max_overflow=0,
+    pool_timeout=30,
+    pool_recycle=1800,  # recycle every 30 min
 )
+
 
 try:
     with engine.connect() as connection:
